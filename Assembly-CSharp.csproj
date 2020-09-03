@@ -63,6 +63,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\DSFramework\Base\Mono\MonoController.cs" />
+    <Compile Include="Assets\DSFramework\Base\Mono\MonoMgr.cs" />
     <Compile Include="Assets\DSFramework\Base\Single\Single.cs" />
     <Compile Include="Assets\DSFramework\Base\UI\PanelMgr\BasePanel.cs" />
     <Compile Include="Assets\DSFramework\Base\UI\PanelMgr\PanelMgr.cs" />

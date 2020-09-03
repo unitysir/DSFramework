@@ -39,26 +39,26 @@ public class BasePanel : MonoBehaviour {
     }
 
     /// <summary>
-    /// 初始化面板组件
+    /// 加载面板资源
     /// </summary>
-    public virtual void OnInit() {
+    public virtual void OnLoad() {
 
-        Debug.Log("初始化面板组件--OnInit()");
+        Debug.Log("加载面板资源--OnLoad()");
     }
 
     /// <summary>
-    /// 显示组件
+    /// 初始化组件
     /// </summary>
     /// <param name="para"></param>
-    public virtual void OnShow(params object[] para) {
+    public virtual void OnInitCmt(params object[] para) {
 
         Debug.Log("显示组件--OnShow()");
     }
 
     /// <summary>
-    /// 添加组件事件
+    /// 异步操作
     /// </summary>
-    public virtual void OnClick() {
+    public virtual void OnAction() {
 
         Debug.Log("添加组件事件--OnClick()");
     }

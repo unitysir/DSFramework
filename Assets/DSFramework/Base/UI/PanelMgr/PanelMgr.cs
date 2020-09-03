@@ -47,15 +47,15 @@ public class PanelMgr :Single<PanelMgr> {
         }
 
         BasePanel panel = m_UIRoot.gameObject.AddComponent<T>();
-        panel.OnInit();
+        panel.OnLoad();
         panel.Load();
 
         Transform parent = layerDic[panel.panelLayer];
         panel.panelObj.transform.SetParent(parent, false);
 
         panelDic.Add(name, panel);
-        panel.OnShow();
-        panel.OnClick();
+        panel.OnInitCmt();
+        panel.OnAction();
 
     }
 
