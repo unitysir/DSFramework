@@ -330,10 +330,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 401494504, guid: b6f2d72002be35c49b4867c56c48997f, type: 3}
-      propertyPath: m_Layer
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 49460482763608298, guid: b6f2d72002be35c49b4867c56c48997f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -393,16 +389,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: UIRoot
-      objectReference: {fileID: 0}
-    - target: {fileID: 49460482763608299, guid: b6f2d72002be35c49b4867c56c48997f,
-        type: 3}
-      propertyPath: m_Layer
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 49460483237799351, guid: b6f2d72002be35c49b4867c56c48997f,
-        type: 3}
-      propertyPath: m_Layer
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6f2d72002be35c49b4867c56c48997f, type: 3}

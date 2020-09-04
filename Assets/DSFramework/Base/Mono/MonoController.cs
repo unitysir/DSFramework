@@ -19,60 +19,57 @@
 using System;
 using UnityEngine;
 
-public class MonoController : MonoBehaviour 
-{
-    private event Action updateAction;
-    private event Action lateUpdateAction;
-    private event Action fixedUpdateAction;
+namespace DSFramework {
+    public class MonoController : SimpleMonoBehaviour {
+        private event Action updateAction;
+        private event Action lateUpdateAction;
+        private event Action fixedUpdateAction;
 
-    private void Start()
-    {
-        DontDestroyOnLoad(this);
+        private void Start() {
+            DontDestroyOnLoad(this);
+        }
+
+        #region Update
+        public void AddUpdateListener(Action fun) {
+            updateAction += fun;
+        }
+
+        public void DelUpdateListener(Action fun) {
+            updateAction -= fun;
+        }
+        #endregion
+
+        #region LateUpdate
+        public void AddLateUpdateListener(Action fun) {
+            lateUpdateAction += fun;
+        }
+
+        public void DelLateUpdateListener(Action fun) {
+            lateUpdateAction -= fun;
+        }
+        #endregion
+
+        #region FixedUpdate
+        public void AddFixedUpdateListener(Action fun) {
+            fixedUpdateAction += fun;
+        }
+
+        public void DelFixedUpdateListener(Action fun) {
+            fixedUpdateAction -= fun;
+        }
+        #endregion
+
+        private void Update() {
+            updateAction?.Invoke();
+        }
+
+        private void LateUpdate() {
+            lateUpdateAction?.Invoke();
+        }
+
+        private void FixedUpdate() {
+            fixedUpdateAction?.Invoke();
+        }
+
     }
-
-    #region Update
-    public void AddUpdateListener(Action fun)
-    {
-        updateAction += fun;
-    }
-
-    public void DelUpdateListener(Action fun)
-    {
-        updateAction -= fun;
-    }
-    #endregion
-
-    #region LateUpdate
-    public void AddLateUpdateListener(Action fun) {
-        lateUpdateAction += fun;
-    }
-
-    public void DelLateUpdateListener(Action fun) {
-        lateUpdateAction -= fun;
-    }
-    #endregion
-
-    #region FixedUpdate
-    public void AddFixedUpdateListener ( Action fun ) {
-        fixedUpdateAction += fun;
-    }
-
-    public void DelFixedUpdateListener ( Action fun ) {
-        fixedUpdateAction -= fun;
-    }
-    #endregion
-
-    private void Update()
-    {
-        updateAction?.Invoke( );
-    }
-
-    private void LateUpdate() {
-        lateUpdateAction?.Invoke();
-    }
-
-    private void FixedUpdate ( ) {
-        fixedUpdateAction?.Invoke( );
-    }
-
 }

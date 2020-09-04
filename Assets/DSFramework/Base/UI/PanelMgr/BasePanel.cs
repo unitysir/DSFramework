@@ -20,72 +20,74 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BasePanel : MonoBehaviour {
-    /// <summary>
-    /// 面板路径
-    /// </summary>
-    public string panelPath;
+namespace DSFramework {
+    public class BasePanel : SimpleMonoBehaviour {
+        /// <summary>
+        /// 面板路径
+        /// </summary>
+        public string panelPath;
 
-    /// <summary>
-    /// 面板对象
-    /// </summary>
-    public GameObject panelObj;
+        /// <summary>
+        /// 面板对象
+        /// </summary>
+        public GameObject panelObj;
 
-    /// <summary>
-    /// 面板层级
-    /// </summary>
-    public PanelMgr.Layer panelLayer = PanelMgr.Layer.Normal;
+        /// <summary>
+        /// 面板层级
+        /// </summary>
+        public PanelMgr.Layer panelLayer = PanelMgr.Layer.Normal;
 
-    /// <summary>
-    /// 加载面板
-    /// </summary>
-    public void Load() {
-        GameObject skinPrefab = Resources.Load<GameObject>(panelPath);
-        panelObj = Instantiate(skinPrefab);
+        /// <summary>
+        /// 加载面板
+        /// </summary>
+        public void Load() {
+            GameObject skinPrefab = Resources.Load<GameObject>(panelPath);
+            panelObj = Instantiate(skinPrefab);
 
-        Debug.Log("加载面板--Load()");
-    }
+            Debug.Log("加载面板--Load()");
+        }
 
-    /// <summary>
-    /// 关闭面板
-    /// </summary>
-    public void Close() {
-        string name = GetType().ToString();
-        PanelMgr.Instance.Close(name);
+        /// <summary>
+        /// 关闭面板
+        /// </summary>
+        public void Close() {
+            string name = GetType().ToString();
+            PanelMgr.Instance.Close(name);
 
-        Debug.Log("关闭面板--Close()");
-    }
+            Debug.Log("关闭面板--Close()");
+        }
 
-    /// <summary>
-    /// 加载面板资源
-    /// </summary>
-    public virtual void OnLoad() {
+        /// <summary>
+        /// 加载面板资源
+        /// </summary>
+        public virtual void OnLoad() {
 
-        Debug.Log("加载面板资源--OnLoad()");
-    }
+            Debug.Log("加载面板资源--OnLoad()");
+        }
 
-    /// <summary>
-    /// 初始化组件
-    /// </summary>
-    /// <param name="para"></param>
-    public virtual void OnInitCmt(params object[] para) {
+        /// <summary>
+        /// 初始化组件
+        /// </summary>
+        /// <param name="para"></param>
+        public virtual void OnInitCmt(params object[] para) {
 
-        Debug.Log("显示组件--OnShow()");
-    }
+            Debug.Log("显示组件--OnShow()");
+        }
 
-    /// <summary>
-    /// 异步操作
-    /// </summary>
-    public virtual void OnAction() {
+        /// <summary>
+        /// 异步操作
+        /// </summary>
+        public virtual void OnAction() {
 
-        Debug.Log("添加组件事件--OnClick()");
-    }
+            Debug.Log("添加组件事件--OnClick()");
+        }
 
-    /// <summary>
-    /// 关闭组件
-    /// </summary>
-    public virtual void OnClose() {
+        /// <summary>
+        /// 关闭组件
+        /// </summary>
+        public virtual void OnClose() {
 
-        Debug.Log("关闭组件--OnClose()");
+            Debug.Log("关闭组件--OnClose()");
+        }
     }
 }

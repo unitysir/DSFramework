@@ -20,53 +20,50 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-public class MonoMgr : Single<MonoMgr>
-{
-    private MonoController controller;
+namespace DSFramework {
+    public class MonoMgr : Single<MonoMgr> {
+        private MonoController controller;
 
-    public MonoMgr()
-    {
-        GameObject obj = new GameObject("MonoCtrl");
-        controller = obj.AddComponent<MonoController>();
+        public MonoMgr() {
+            GameObject obj = new GameObject("MonoCtrl");
+            controller = obj.AddComponent<MonoController>();
+        }
+
+        #region Update
+        public void AddUpdateListener(Action fun) {
+            controller.AddUpdateListener(fun);
+        }
+
+        public void DelUpdateListener(Action fun) {
+            controller.DelUpdateListener(fun);
+        }
+        #endregion
+
+        #region LateUpdate
+        public void AddLateUpdateListener(Action fun) {
+            controller.AddLateUpdateListener(fun);
+        }
+
+        public void DelLateUpdateListener(Action fun) {
+            controller.DelLateUpdateListener(fun);
+        }
+        #endregion
+
+        #region FixedUpdate
+        public void AddFixedUpdateListener(Action fun) {
+            controller.AddFixedUpdateListener(fun);
+        }
+
+        public void DelFixedUpdateListener(Action fun) {
+            controller.DelFixedUpdateListener(fun);
+        }
+        #endregion
+
+
+
+        public Coroutine StartCoroutine(IEnumerator routine) {
+            return controller.StartCoroutine(routine);
+        }
+
     }
-
-    #region Update
-    public void AddUpdateListener(Action fun)
-    {
-        controller.AddUpdateListener(fun);
-    }
-
-    public void DelUpdateListener(Action fun)
-    {
-        controller.DelUpdateListener(fun);
-    }
-    #endregion
-
-    #region LateUpdate
-    public void AddLateUpdateListener(Action fun) {
-        controller.AddLateUpdateListener(fun);
-    }
-
-    public void DelLateUpdateListener(Action fun) {
-        controller.DelLateUpdateListener(fun);
-    }
-    #endregion
-
-    #region FixedUpdate
-    public void AddFixedUpdateListener ( Action fun ) {
-        controller.AddFixedUpdateListener(fun);
-    }
-
-    public void DelFixedUpdateListener ( Action fun ) {
-        controller.DelFixedUpdateListener(fun);
-    }
-    #endregion
-
-
-
-    public Coroutine StartCoroutine(IEnumerator routine)
-    {
-        return controller.StartCoroutine(routine);
-    }
-
 }
