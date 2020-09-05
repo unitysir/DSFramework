@@ -11,8 +11,12 @@ namespace DSFramework {
     #if UNITY_EDITOR
         public static void OpenFile(string filepath) { Application.OpenURL("file:///" + filepath); }
 
-        public static void CallMenuItem(string menuName) {
-            EditorApplication.ExecuteMenuItem(menuName);
+        //public static void CallMenuItem(string menuName) {
+        //    //EditorApplication.ExecuteMenuItem(menuName);
+        //    Application.OpenURL("file://" + Path.Combine(Application.dataPath, "../"));
+        //}
+
+        public static void CallMenuItem() {
             Application.OpenURL("file://" + Path.Combine(Application.dataPath, "../"));
         }
 
@@ -20,8 +24,8 @@ namespace DSFramework {
             AssetDatabase.ExportPackage(assetName, fileName, ExportPackageOptions.Recurse);
         }
 
-        [MenuItem("DSFramework/02.MenuItem 复用", false, 3)]
-        private static void MenuClicked() { EditorUtil.CallMenuItem("02.复制文本到剪切板"); }
+        [MenuItem("DSFramework/02.打开文件所在位置", false, 2)]
+        private static void MenuClicked() { EditorUtil.CallMenuItem(); }
 
     #endif
     }

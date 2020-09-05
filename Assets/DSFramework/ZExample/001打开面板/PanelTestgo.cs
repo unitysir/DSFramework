@@ -21,7 +21,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace DSFramework {
-    public class PanelTestgo : MonoBehaviour {
+    public class PanelTestgo : SimpleMonoBehaviour {
         // Start is called before the first frame update
         void Start() {
             PanelMgr.Instance.Open<PanelTest>();

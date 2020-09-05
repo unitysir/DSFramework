@@ -7,9 +7,9 @@ namespace DSFramework {
     public class PoolTest : SimpleMonoBehaviour {
         // Start is called before the first frame update
         void Start() {
-            PoolMgr.Instance.GetObj("Example/002缓存池/Cube");
-            PoolMgr.Instance.GetObj("Example/002缓存池/Sphere");
-            PoolMgr.Instance.GetObj("Example/002缓存池/Capsule");
+            //PoolMgr.Instance.GetObj("Example/002缓存池/Cube");
+            //PoolMgr.Instance.GetObj("Example/002缓存池/Sphere");
+            //PoolMgr.Instance.GetObj("Example/002缓存池/Capsule");
 
         }
 

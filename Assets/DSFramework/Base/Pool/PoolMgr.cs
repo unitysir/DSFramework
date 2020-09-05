@@ -19,21 +19,24 @@ namespace DSFramework {
         /// <returns></returns>
         public GameObject GetObj(string poolName) {
             GameObject obj = null;//缓存对象
-                                  //如果当前缓存池中有需要的对象时,直接获取
+            //如果当前缓存池中有需要的对象时,直接获取
             if (poolDic.ContainsKey(poolName)) {
-                obj = poolDic[poolName][0];
-                poolDic[poolName].RemoveAt(0);
+                if (poolDic[poolName].Count > 0) {
+                    obj = poolDic[poolName][0];
+                    poolDic[poolName].RemoveAt(0);
+                    obj.SetActive(true);
+                    obj.transform.parent = null;
+
+                }
             } else {//如果没有缓存池没有对象,则加载
                 try {
                     obj = Object.Instantiate(Resources.Load<GameObject>(poolName));
-                    obj.transform.parent = poolObj.transform;
+                    obj.transform.parent = null;
                 } catch {
                     throw new System.ArgumentException($"没有找到该资源:{poolName}", "objName");
                 }
             }
-
-            obj.SetActive(true);
-            obj.transform.parent = null;
+            
             return obj;
         }
 

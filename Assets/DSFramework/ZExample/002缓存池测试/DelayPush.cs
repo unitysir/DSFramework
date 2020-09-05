@@ -5,7 +5,7 @@ using UnityEngine;
 namespace DSFramework {
     public class DelayPush : SimpleMonoBehaviour {
         private void OnEnable() {
-            Invoke("Push", 2f);
+            Invoke("Push", 4f);
         }
 
         private void Push() {

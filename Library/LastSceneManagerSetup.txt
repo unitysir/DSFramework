@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/DSFramework/Scenes/SampleScene.unity
+- path: Assets/DSFramework/Scenes/DSFrameworkTest.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
