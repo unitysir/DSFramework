@@ -22,14 +22,14 @@ using UnityEngine;
 using UnityEngine.UI;
 
 namespace DSFramework {
-    public class PanelTest : BasePanel {
+    public class PanelTest : DSBasePanel {
         private Text txt;
         private Button btn;
 
         public override void OnLoad() {
             base.OnLoad();
             panelPath = "Example/001打开面板/PanelTest";
-            panelLayer = PanelMgr.Layer.Normal;
+            panelLayer = DSPanelMgr.Layer.Normal;
         }
 
         public override void OnInitCmt(params object[] para) {

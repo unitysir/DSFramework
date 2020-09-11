@@ -9,7 +9,7 @@ namespace DSFramework {
         }
 
         private void Push() {
-            PoolMgr.Instance.PushObj("Example/002缓存池/Cube", gameObject);
+            DSPoolMgr.Instance.PushObj("Example/002缓存池/Cube", gameObject);
         }
 
     }

@@ -16,7 +16,7 @@ namespace DSFramework {
         // Update is called once per frame
         void Update() {
             if (Input.GetKeyDown(KeyCode.Space)) {
-                PoolMgr.Instance.GetObj("Example/002缓存池/Cube");
+                DSPoolMgr.Instance.GetObj("Example/002缓存池/Cube");
             }
         }
     }

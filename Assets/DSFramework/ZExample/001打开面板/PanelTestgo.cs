@@ -24,7 +24,7 @@ namespace DSFramework {
     public class PanelTestgo : SimpleMonoBehaviour {
         // Start is called before the first frame update
         void Start() {
-            PanelMgr.Instance.Open<PanelTest>();
+            DSPanelMgr.Instance.Open<PanelTest>();
         }
 
         // Update is called once per frame

@@ -32,23 +32,33 @@ namespace DSFramework {
         }
 
         /// <summary>
-        /// 通过名称获取组件
+        /// 通过当前对象获取组件
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="objName"></param>
         /// <returns></returns>
-        protected T GetCmpt<T>(string objName) {
-            return GameObject.Find(objName).GetComponent<T>();
+        protected T GetCmpt<T>(GameObject obj) {
+            return obj.GetComponent<T>();
         }
 
         /// <summary>
-        /// 通过标签获取组件
+        /// 通过全局标签获取对象组件
         /// </summary>
         /// <typeparam name="T">对象类型</typeparam>
         /// <param name="tagName">对象标签名</param>
         /// <returns></returns>
         protected T GetCmpt4Tag<T>(string tagName) {
             return GameObject.FindWithTag(tagName).GetComponent<T>();
+        }
+
+        /// <summary>
+        /// 通过全局名称获取对象组件
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="objName"></param>
+        /// <returns></returns>
+        protected T GetCmpt<T>(string objName) {
+            return GameObject.Find(objName).GetComponent<T>();
         }
 
         #endregion
@@ -60,7 +70,7 @@ namespace DSFramework {
         /// </summary>
         /// <param name="tagName">标签名称</param>
         /// <returns></returns>
-        protected GameObject GetObj2Tag(string tagName) {
+        protected GameObject GetObj4Tag(string tagName) {
             return GameObject.FindWithTag(tagName);
         }
 
@@ -82,7 +92,47 @@ namespace DSFramework {
             return tran.gameObject;
         }
 
+        /// <summary>
+        /// 获取名称
+        /// </summary>
+        /// <returns></returns>
+        protected string Name {
+            get { return gameObject.name; }
+            set { gameObject.name = value; }
+        }
+
         #endregion
+
+        #region 获取变换
+        /// <summary>
+        /// 通过对象标签获取变换
+        /// </summary>
+        /// <param name="tagName">标签名称</param>
+        /// <returns></returns>
+        protected Transform GetTran4Tag(string tagName) {
+            return GetObj4Tag(tagName).transform;
+        }
+
+        /// <summary>
+        /// 通过对象名称获取变换
+        /// </summary>
+        /// <param name="objName">对象名称</param>
+        /// <returns></returns>
+        protected Transform GetTran(string objName) {
+            return GetObj(objName).transform;
+        }
+
+        /// <summary>
+        /// 通过对象获取变换
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        protected Transform GetTran(GameObject obj) {
+            return obj.transform;
+        }
+
+        #endregion
+
 
     }
 }
